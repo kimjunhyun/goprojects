@@ -1,4 +1,4 @@
-package main
+package mai
 
 //필요 패키지 임포트
 import (
@@ -10,7 +10,7 @@ import (
 
 func defaultHandler(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
-	//Get 파라미터 및 정보 출력
+	//Get 파라미터 및 정보 출력 jj
 	fmt.Println("default : ", r.Form)
 	fmt.Println("path", r.URL.Path)
 	fmt.Println("param : ", r.Form["test_param"])
