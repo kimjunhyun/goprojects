@@ -18,7 +18,7 @@ import (
 	"github.com/jacobsa/go-serial/serial"
 
 )
-
+//main 
 func main() {
 	strPort := flag.String("port", "COM5", "a string")
 	numBaudRate := flag.Int("baudrate", 9600, "an int")
@@ -80,6 +80,7 @@ func main() {
 
 }
 
+//ConvertFontSize 
 func ConvertFontSize(width int, height int) string {
 	result := "0"
 	_w := 0
