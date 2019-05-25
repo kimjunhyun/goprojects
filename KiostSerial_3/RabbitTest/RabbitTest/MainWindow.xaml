@@ -1,0 +1,11 @@
+﻿<Window x:Class="RabbitTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525" Closing="Window_Closing">
+    <Grid>
+        <Button x:Name="sendBtn" Content="Send" HorizontalAlignment="Left" Margin="362,53,0,0" VerticalAlignment="Top" Width="75" Click="sendBtn_Click"/>
+        <TextBox x:Name="sendTxt" HorizontalAlignment="Left" Height="23" Margin="85,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="338"/>
+        <TextBox x:Name="receiveTxt" HorizontalAlignment="Left" Height="23" Margin="85,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="338" RenderTransformOrigin="0.5,2.391"/>
+
+    </Grid>
+</Window>
