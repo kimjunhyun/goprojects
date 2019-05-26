@@ -16,6 +16,7 @@ func main() {
 	fmt.Println("hello world")
 	LogOut()
 }
+
 func (p Point) String() string {
 	return fmt.Sprintf("(%d, %d)", p.x, p.y)
 }
