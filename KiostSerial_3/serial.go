@@ -165,11 +165,11 @@ func requestHandler(c io.ReadWriteCloser) {
 
 		fmt.Println(string(data[:n])) // 데이터 출력
 
-		_, err = c.Write(data[:n]) // 클라이언트로 데이터를 보냄
-		if err != nil {
-			fmt.Println(err)
-			return
-		}
+		// _, err = c.Write(data[:n]) // 클라이언트로 데이터를 보냄
+		// if err != nil {
+		// 	fmt.Println(err)
+		// 	return
+		// }
 
 	}
 }
