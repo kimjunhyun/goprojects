@@ -58,6 +58,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Command.cs" />
     <Compile Include="Receive.cs" />
     <Compile Include="Send.cs" />
     <Page Include="MainWindow.xaml">
