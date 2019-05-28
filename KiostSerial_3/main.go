@@ -90,7 +90,7 @@ func ConvertFontSize(width int, height int) string {
 	} else if width == 8 {
 		_w = 112
 	} else {
-		_w = 0
+		_w = 0 //sdklhskjgh
 	}
 	//세로변환
 	if height == 1 {
