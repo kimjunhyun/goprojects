@@ -13,7 +13,6 @@ import (
 	"net/http/httputil"
 	"net/url"
 	"os"
-	"strconv"
 	"time"
 )
 
@@ -83,14 +82,14 @@ func main() {
 		//장비정보를 가져오는 루틴
 		go DoJob(Icnt%4, sActive)
 
-		if Icnt%4 == 0 {
-			// 딜레이
-			time.Sleep(5 * time.Second)
-			sActive = DoJobBinary()
+		// if Icnt%4 == 0 {
+		// 	// 딜레이
+		// 	time.Sleep(5 * time.Second)
+		// 	sActive = DoJobBinary()
 
-			fmt.Printf(sActive + strconv.Itoa(Icnt) + "\n")
-			//sActive := onss
-		}
+		// 	fmt.Printf(sActive + strconv.Itoa(Icnt) + "\n")
+		// 	//sActive := onss
+		// }
 
 		if Icnt > 100 {
 			// 딜레이
@@ -157,12 +156,14 @@ func DoJob(i int, sact string) {
 
 	//장비 주소 RESTful API 주소
 	// urlStr := "https://223.171.51.167/api/rest/v1/protocols/bacnet/local/objects/analog-value/" + sNum[i] + "/properties/present-value"
-	urlStr := "https://172.24.253.241/api/rest/v1/protocols/bacnet/local/objects/analog-value/" + sNum[i] + "/properties/present-value"
+	urlStr := "https://223.171.39.166/api/rest/v1/protocols/bacnet/local/objects/analog-value/" + sNum[i] + "/properties/present-value"
+	//https://223.171.39.166/api/rest/v1/protocols/bacnet/local/objects/analog-value/1/properties/present-value
 
 	url, err := url.Parse(urlStr)
 	if err != nil {
 		log.Println(err)
 	}
+	fmt.Println(urlStr)
 
 	//adding the Transport object to the http Client
 	tr := &http.Transport{
@@ -179,7 +180,7 @@ func DoJob(i int, sact string) {
 	//1
 	//
 	//adding proxy authentication
-	auth := "user:Eclypse1234"
+	auth := "user:User1234"
 	basicAuth := "Basic " + base64.StdEncoding.EncodeToString([]byte(auth))
 	request.Header.Add("Authorization", basicAuth)
 
@@ -220,7 +221,7 @@ func DoJobBinary() string {
 	///
 	//장비 주소 RESTful API 주소
 	// urlStr := "https://223.171.51.167/api/rest/v1/protocols/bacnet/local/objects/binary-input/203/properties/present-value" //사육신 현장
-	urlStr := "https://172.24.253.241/api/rest/v1/protocols/bacnet/local/objects/binary-input/203/properties/present-value" //마곡중앙광장 현장
+	urlStr := "https://223.171.39.166/api/rest/v1/protocols/bacnet/local/objects/binary-input/203/properties/present-value" //마곡중앙광장 현장
 
 	url, err := url.Parse(urlStr)
 	if err != nil {
@@ -242,7 +243,7 @@ func DoJobBinary() string {
 	//1
 	//
 	//adding proxy authentication
-	auth := "user:Eclypse1234"
+	auth := "user:User1234"
 	basicAuth := "Basic " + base64.StdEncoding.EncodeToString([]byte(auth))
 	request.Header.Add("Authorization", basicAuth)
 

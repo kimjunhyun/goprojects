@@ -27,7 +27,7 @@ namespace RabbitTest
                 var body = Encoding.UTF8.GetBytes(message);
 
                 channel.BasicPublish(exchange: "",
-                                     routingKey: "안녕하세요",
+                                     routingKey: "serial1",
                                      basicProperties: null,
                                      body: body);
                 Console.WriteLine(" [x] Sent {0}", message);

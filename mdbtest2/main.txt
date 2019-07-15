@@ -1,0 +1,13 @@
+import
+(
+        "database/sql"
+    "accessDBwE"
+
+)
+func main()  {
+    var db *sql.DB
+    var err error 
+    db, err = accessDBwE.Open("adodb","Provider=Microsoft.ACE.OLEDB.12.0;Data Source=SomeFile.mdb;")
+
+    // use db like any other sql.db handle
+}

@@ -14,7 +14,7 @@ import (
 )
 
 //NewSerial 함수
-func NewSerial(sport string, irate uint, idata uint, istop uint) {
+func NewSerial(sport string, irate uint, idata uint, istop uint, chname string) {
 	// Set up options.
 	options := serial.OpenOptions{
 		PortName:        sport,
@@ -90,7 +90,7 @@ func NewSerial(sport string, irate uint, idata uint, istop uint) {
 
 	defer amqpChannel.Close()
 
-	queue, err := amqpChannel.QueueDeclare("안녕하세요", true, false, false, false, nil)
+	queue, err := amqpChannel.QueueDeclare(chname, true, false, false, false, nil)
 	handleError(err, "Could not declare `add` queue")
 
 	err = amqpChannel.Qos(1, 0, false)
@@ -138,10 +138,10 @@ func NewSerial(sport string, irate uint, idata uint, istop uint) {
 
 			body := "Hello World!"
 			err = amqpChannel.Publish(
-				"",      // exchange
-				"안녕하세요", // routing key
-				false,   // mandatory
-				false,   // immediate
+				"",     // exchange
+				chname, // routing key
+				false,  // mandatory
+				false,  // immediate
 				amqp.Publishing{
 					ContentType: "text/plain",
 					Body:        []byte(body),

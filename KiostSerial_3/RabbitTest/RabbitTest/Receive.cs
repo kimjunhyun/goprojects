@@ -19,7 +19,7 @@ namespace RabbitTest
     {
         MainWindow m_pMainWnd;
         Thread recvThread;
-        string QueueName = "안녕하세요";
+        string QueueName = "serial1";
         public string msg1;
 
         MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);      

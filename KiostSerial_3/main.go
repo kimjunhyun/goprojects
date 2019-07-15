@@ -25,13 +25,14 @@ func main() {
 
 	//go SetRabbit()
 
-	strPort := flag.String("port", "COM3", "a string")
+	strPort := flag.String("port", "COM2", "a string")
 	numBaudRate := flag.Int("baudrate", 9600, "an int")
-	numDataBits := flag.Int("DataBits", 8, "an int")
-	numStopBits := flag.Int("StopBits", 1, "an int")
+	numDataBits := flag.Int("databits", 8, "an int")
+	numStopBits := flag.Int("stopbits", 1, "an int")
+	channelName := flag.String("channel", "serial1", "a string")
 	flag.Parse()
 
-	NewSerial(*strPort, uint(*numBaudRate), uint(*numDataBits), uint(*numStopBits))
+	NewSerial(*strPort, uint(*numBaudRate), uint(*numDataBits), uint(*numStopBits), *channelName)
 }
 
 // func SetRabbit() {
