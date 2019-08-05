@@ -72,7 +72,7 @@ func main() {
 	Icnt := 0
 
 	//날씨정보 얻기
-	go GetWeather()
+	//go GetWeather()
 	// 딜레이
 	time.Sleep(5 * time.Second)
 
@@ -148,13 +148,13 @@ func GetWeather() {
 func DoJob(i int, sact string) {
 	///
 	///
-	sNum := [4]string{"1", "2", "4", "5"}
+	sNum := [4]string{"23", "24", "23", "24"} //1,2,4,5
 	//av1 : 외기온도
 	//av2 : 외기습도
 	//av4 : 초미세먼지
 	//av5 : 미세먼지
 
-	//장비 주소 RESTful API 주소
+	//장비 주소 RESTful API 주소 223.171.39.166
 	// urlStr := "https://223.171.51.167/api/rest/v1/protocols/bacnet/local/objects/analog-value/" + sNum[i] + "/properties/present-value"
 	urlStr := "https://223.171.39.166/api/rest/v1/protocols/bacnet/local/objects/analog-value/" + sNum[i] + "/properties/present-value"
 	//https://223.171.39.166/api/rest/v1/protocols/bacnet/local/objects/analog-value/1/properties/present-value
